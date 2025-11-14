@@ -1,1 +1,116 @@
-# lab-3-intro-a-sistemas
+# Laboratorio 3 : Comunicación entre Procesos usando Colas de Mensajes
+
+**Universidad de Magallanes**  
+**Sistemas Operativos**
+
+## Descripción
+
+Implementación del problema Send-Receive utilizando colas de mensajes  (`msgget`, `msgsnd`, `msgrcv`, `msgctl`).
+
+## 📁 Estructura del Proyecto
+
+```
+lab3/
+├── src/
+│   ├── send.c       # Proceso que genera datos
+│   └── receive.c      # Proceso que consume datos
+├── inc/
+│   └── mensaje.h         # Definiciones compartidas
+├── bin/                  # Ejecutables (generado)
+├── Makefile             # Automatización de compilación
+└── README.md            # Este archivo
+```
+
+## Compilación
+
+```bash
+# Compilar todo
+make
+
+# Compilar solo productor
+make productor
+
+# Compilar solo consumidor
+make consumidor
+```
+
+## Ejecución
+
+### Experimento Básico (1 Productor → 1 Consumidor)
+
+```bash
+# Terminal 1: Iniciar consumidor
+./bin/consumidor &
+
+# Terminal 2: Iniciar productor
+./bin/productor
+```
+
+### Experimentos de Análisis
+
+#### A) Consumidor LENTO (más mensajes que capacidad de atención)
+```bash
+make test-slow-consumer
+# Consumidor procesa cada mensaje en 500ms
+# El productor genera más rápido → buffer se llena
+```
+
+#### B) Consumidor RÁPIDO (procesa más rápido que producción)
+```bash
+make test-fast-consumer
+# Consumidor procesa cada mensaje en 10ms
+# El productor genera más lento → buffer vacío
+```
+
+## 🔍 Monitoreo del Sistema
+
+```bash
+# Ver colas de mensajes activas
+make status
+# o directamente:
+ipcs
+
+# Limpiar colas manualmente
+make cleanq
+# o:
+ipcrm -q [msqid]
+```
+
+## Características Implementadas
+
+- Productor genera 100 datos con retardo aleatorio (50-500ms)
+- Consumidor con velocidad configurable
+- Mensajes alfanuméricos con timestamp
+- Control de finalización con mensaje especial
+- Información de secuencia y origen
+
+## Comandos Útiles
+
+```bash
+# Ver procesos activos
+ps aux | grep send
+ps aux | grep receive
+
+# Matar procesos
+killall send
+killall receive
+
+# Limpiar todo
+make clean
+make cleanq
+```
+
+## RECORDATORIOS
+
+1. Siempre eliminar colas al finalizar (`msgctl(msqid, IPC_RMID, NULL)`)
+2. Usar `ipcs` para verificar recursos IPC activos
+3. El sistema tiene límites en cantidad de colas y tamaño de buffer
+4. Los permisos 0666 permiten acceso compartido entre usuarios
+
+## REFERENCIAS
+
+- `man msgget`
+- `man msgsnd`
+- `man msgrcv`
+- `man msgctl`
+- `man ipcs`
