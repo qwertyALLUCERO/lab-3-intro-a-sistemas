@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
     
-    printf("Productor %d conectado a cola %d\n", id_send, msqid);
+    printf("Send %d conectado a cola %d\n", id_send, msqid);
     
     /* inicializar generador de números aleatorios */
     srand(time(NULL) + id_send);
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
             exit(EXIT_FAILURE);
         }
         
-        printf("Productor %d: Enviado [%d/%d] dato=%d (delay=%dms)\n", 
+        printf("Send %d: Enviado [%d/%d] dato=%d (delay=%dms)\n", 
                id_send, i+1, MAX_DATOS, msg.dato, delay/1000);
     }
     

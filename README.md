@@ -7,7 +7,7 @@
 
 Implementación del problema Send-Receive utilizando colas de mensajes  (`msgget`, `msgsnd`, `msgrcv`, `msgctl`).
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 lab3/
@@ -39,11 +39,11 @@ make consumidor
 ### Experimento Básico (1 Productor → 1 Consumidor)
 
 ```bash
-# Terminal 1: Iniciar consumidor
-./bin/consumidor &
+# Terminal 1: Iniciar send
+./bin/send &
 
-# Terminal 2: Iniciar productor
-./bin/productor
+# Terminal 2: Iniciar receive
+./bin/receive
 ```
 
 ### Experimentos de Análisis
@@ -62,7 +62,7 @@ make test-fast-consumer
 # El productor genera más lento → buffer vacío
 ```
 
-## 🔍 Monitoreo del Sistema
+## Monitoreo del Sistema
 
 ```bash
 # Ver colas de mensajes activas
