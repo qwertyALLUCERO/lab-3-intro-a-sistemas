@@ -1,0 +1,38 @@
+=== SEND 3 INICIADO ===
+PID: 102468
+Mensajes a enviar: 30
+Cola creada/conectada: 21
+
+[  1/ 30] Enviado: Send3-Msg001-I-Dato:0511 (delay=216ms)
+[  2/ 30] Enviado: Send3-Msg002-y-Dato:0061 (delay=342ms)
+[  3/ 30] Enviado: Send3-Msg003-K-Dato:0614 (delay=316ms)
+[  4/ 30] Enviado: Send3-Msg004-p-Dato:0376 (delay=111ms)
+[  5/ 30] Enviado: Send3-Msg005-L-Dato:0865 (delay=442ms)
+[  6/ 30] Enviado: Send3-Msg006-W-Dato:0314 (delay=257ms)
+[  7/ 30] Enviado: Send3-Msg007-F-Dato:0338 (delay=255ms)
+[  8/ 30] Enviado: Send3-Msg008-W-Dato:0520 (delay=112ms)
+[  9/ 30] Enviado: Send3-Msg009-X-Dato:0953 (delay=161ms)
+[ 10/ 30] Enviado: Send3-Msg010-F-Dato:0331 (delay=95ms)
+[ 11/ 30] Enviado: Send3-Msg011-V-Dato:0780 (delay=253ms)
+[ 12/ 30] Enviado: Send3-Msg012-o-Dato:0170 (delay=59ms)
+[ 13/ 30] Enviado: Send3-Msg013-V-Dato:0705 (delay=251ms)
+[ 14/ 30] Enviado: Send3-Msg014-R-Dato:0741 (delay=127ms)
+[ 15/ 30] Enviado: Send3-Msg015-U-Dato:0265 (delay=118ms)
+[ 16/ 30] Enviado: Send3-Msg016-k-Dato:0578 (delay=325ms)
+[ 17/ 30] Enviado: Send3-Msg017-h-Dato:0267 (delay=286ms)
+[ 18/ 30] Enviado: Send3-Msg018-D-Dato:0786 (delay=104ms)
+[ 19/ 30] Enviado: Send3-Msg019-I-Dato:0091 (delay=216ms)
+[ 20/ 30] Enviado: Send3-Msg020-d-Dato:0845 (delay=52ms)
+[ 21/ 30] Enviado: Send3-Msg021-M-Dato:0844 (delay=498ms)
+[ 22/ 30] Enviado: Send3-Msg022-K-Dato:0904 (delay=91ms)
+[ 23/ 30] Enviado: Send3-Msg023-g-Dato:0237 (delay=254ms)
+[ 24/ 30] Enviado: Send3-Msg024-R-Dato:0388 (delay=322ms)
+[ 25/ 30] Enviado: Send3-Msg025-v-Dato:0935 (delay=59ms)
+[ 26/ 30] Enviado: Send3-Msg026-g-Dato:0887 (delay=463ms)
+[ 27/ 30] Enviado: Send3-Msg027-Z-Dato:0879 (delay=342ms)
+[ 28/ 30] Enviado: Send3-Msg028-V-Dato:0134 (delay=157ms)
+[ 29/ 30] Enviado: Send3-Msg029-V-Dato:0841 (delay=86ms)
+[ 30/ 30] Enviado: Send3-Msg030-y-Dato:0685 (delay=88ms)
+
+=== SEND 3 FINALIZADO ===
+Total enviado: 30 mensajes + 1 FIN

@@ -14,7 +14,7 @@
 #include <time.h>
 
 /* configuración de la fila de mensajes */
-#define CLAVE_COLA 234
+#define CLAVE_COLA 12345
 #define MAX_DATOS 100
 #define TAM_MENSAJE 64
 
@@ -32,11 +32,5 @@ struct mensaje_t
     char texto[TAM_MENSAJE];
     time_t timestamp;
 };
-
-/* funciones auxiliares */
-int crear_cola(key_t clave);
-void eliminar_cola(int msqid);
-void imprimir_error(const char *msg);
-int delay_aleatorio(int min_ms, int max_ms);
 
 #endif /* MENSAJE_H */

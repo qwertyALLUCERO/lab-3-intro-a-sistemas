@@ -1,77 +1,94 @@
 /*
- * productor.c - Proceso que genera y envía datos a través de cola de mensajes
+ * send.c - Proceso que genera y envía datos
  * 
- * Compilar: gcc -Iinc src/productor.c -o bin/productor
- * Ejecutar: ./bin/productor [id_send]
+ * Compilar: gcc -Iincs src/send.c -o bin/send
+ * Ejecutar: ./bin/send [id_send] [num_mensajes]
  */
 
 #include "../incs/mensaje.h"
+#include "../incs/random.h"
 
 int main(int argc, char *argv[]) 
 {
-    int msqid;
-    struct mensaje_t msg;
+    srand(time(NULL) + getpid());
+    
+    struct mensaje_t m;
+    int msg_id, msg_count = 1;
     int id_send = 1;
+    int total_messages = MAX_DATOS;
     int longitud = sizeof(struct mensaje_t) - sizeof(long);
     
-    /* saca el ID del productor */
-    if (argc > 1)
+    // Parsear argumentos
+    if (argc > 1) 
     {
         id_send = atoi(argv[1]);
     }
+    if (argc > 2) 
+    {
+        total_messages = atoi(argv[2]);
+    }
     
     printf("=== SEND %d INICIADO ===\n", id_send);
+    printf("PID: %d\n", getpid());
+    printf("Mensajes a enviar: %d\n", total_messages);
     
-    /* Crear o conectar a la cola de mensajes */
-    if ((msqid = msgget(CLAVE_COLA, IPC_CREAT | 0666)) == -1) {
-        perror("Error al crear/conectar cola de mensajes");
-        exit(EXIT_FAILURE);
+    // Crear la cola de mensajes (usando CLAVE_COLA)
+    msg_id = msgget(CLAVE_COLA, 0666 | IPC_CREAT);
+    if (msg_id == -1) 
+    {
+        perror("Error al crear la cola de mensajes");
+        return 1;
     }
     
-    printf("Send %d conectado a cola %d\n", id_send, msqid);
+    printf("Cola creada/conectada: %d\n\n", msg_id);
     
-    /* inicializar generador de números aleatorios */
-    srand(time(NULL) + id_send);
-    
-    /* Producir y enviar MAX_DATOS mensajes */
-    for (int i = 0; i < MAX_DATOS; i++)
+    // Enviar mensajes
+    while (msg_count <= total_messages) 
     {
-        /* preparar el mensaje */
-        msg.tipo = TIPO_DATO;
-        msg.id_send = id_send;
-        msg.numero_secuencia = i + 1;
-        msg.dato = rand() % 1000; // dato aleatorio entre 0-999
-        msg.timestamp = time(NULL);
-        snprintf(msg.texto, TAM_MENSAJE, "Dato#%d del Prod%d", i+1, id_send);
+        // Delay aleatorio (50-500ms como pide el lab)
+        int delay_ms = 50 + (rand() % 451);
+        usleep(delay_ms * 1000);
         
-        /* delay aleatorio de producción (50-500 ms) */
-        int delay = 50000 + (rand() % 450000);
-        usleep(delay);
+        // Preparar mensaje
+        m.tipo = TIPO_DATO;
+        m.id_send = id_send;
+        m.numero_secuencia = msg_count;
+        m.dato = randomInt(1, 1000);
+        m.timestamp = time(NULL);
         
-        /*enviar mesjaje */
-        if (msgsnd(msqid, &msg, longitud, 0) == -1)
+        // Mensaje alfanumérico con letra aleatoria
+        snprintf(m.texto, TAM_MENSAJE, "Send%d-Msg%03d-%c-Dato:%04d", 
+                id_send, msg_count, letraRandom(), m.dato);
+        
+        // Enviar el mensaje
+        if (msgsnd(msg_id, &m, longitud, 0) == -1)
         {
-            perror("Error al enviar mensaje");
-            exit(EXIT_FAILURE);
+            perror("Error al enviar el mensaje");
+            return 1;
         }
         
-        printf("Send %d: Enviado [%d/%d] dato=%d (delay=%dms)\n", 
-               id_send, i+1, MAX_DATOS, msg.dato, delay/1000);
+        printf("[%3d/%3d] Enviado: %s (delay=%dms)\n",
+               msg_count, total_messages, m.texto, delay_ms);
+        
+        msg_count++;
     }
     
-    /* Enviar mensaje de finalización */
-    msg.tipo = TIPO_FIN;
-    msg.id_send = id_send;
-    msg.numero_secuencia = -1;
-    strcpy(msg.texto, "FIN");
+    // Enviar mensaje de finalización
+    m.tipo = TIPO_FIN;
+    m.id_send = id_send;
+    m.numero_secuencia = -1;
+    m.dato = -1;
+    m.timestamp = time(NULL);
+    snprintf(m.texto, TAM_MENSAJE, "FIN-Send%d", id_send);
     
-    if (msgsnd(msqid, &msg, longitud, 0) == -1) {
+    if (msgsnd(msg_id, &m, longitud, 0) == -1) 
+    {
         perror("Error al enviar mensaje FIN");
-        exit(EXIT_FAILURE);
+        return 1;
     }
     
-    printf("=== PRODUCTOR %d FINALIZADO ===\n", id_send);
-    printf("Total mensajes enviados: %d + 1 FIN\n", MAX_DATOS);
+    printf("\n=== SEND %d FINALIZADO ===\n", id_send);
+    printf("Total enviado: %d mensajes + 1 FIN\n", total_messages);
     
-    return EXIT_SUCCESS;
+    return 0;
 }

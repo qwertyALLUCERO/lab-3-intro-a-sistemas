@@ -1,0 +1,23 @@
+=== SEND 8 INICIADO ===
+PID: 103234
+Mensajes a enviar: 15
+Cola creada/conectada: 22
+
+[  1/ 15] Enviado: Send8-Msg001-G-Dato:0804 (delay=205ms)
+[  2/ 15] Enviado: Send8-Msg002-g-Dato:0523 (delay=78ms)
+[  3/ 15] Enviado: Send8-Msg003-x-Dato:0215 (delay=120ms)
+[  4/ 15] Enviado: Send8-Msg004-c-Dato:0483 (delay=495ms)
+[  5/ 15] Enviado: Send8-Msg005-Q-Dato:0103 (delay=173ms)
+[  6/ 15] Enviado: Send8-Msg006-P-Dato:0279 (delay=337ms)
+[  7/ 15] Enviado: Send8-Msg007-E-Dato:0792 (delay=83ms)
+[  8/ 15] Enviado: Send8-Msg008-U-Dato:0954 (delay=454ms)
+[  9/ 15] Enviado: Send8-Msg009-X-Dato:0306 (delay=432ms)
+[ 10/ 15] Enviado: Send8-Msg010-s-Dato:0261 (delay=311ms)
+[ 11/ 15] Enviado: Send8-Msg011-y-Dato:0064 (delay=466ms)
+[ 12/ 15] Enviado: Send8-Msg012-f-Dato:0587 (delay=250ms)
+[ 13/ 15] Enviado: Send8-Msg013-G-Dato:0153 (delay=321ms)
+[ 14/ 15] Enviado: Send8-Msg014-f-Dato:0882 (delay=280ms)
+[ 15/ 15] Enviado: Send8-Msg015-G-Dato:0754 (delay=299ms)
+
+=== SEND 8 FINALIZADO ===
+Total enviado: 15 mensajes + 1 FIN

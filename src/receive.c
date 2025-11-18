@@ -1,8 +1,14 @@
-/******** receive.c - Proceso que recibe y procesa datos de cola de mensajes
-# *
-# * Compilar: gcc -Iincs src/receive.c -o bin/receive
-# * Ejecutar: ./bin/receive [velocidad_ms]
-# */
+/*
+ * receive.c - Proceso que recibe y procesa datos
+ * 
+ * Compilar: gcc -Iincs src/receive.c -o bin/receive
+ * Ejecutar: ./bin/receive [modo] [num_senders]
+ * 
+ * Modos:
+ *   lento  - Procesa lento (2000ms) - Análisis A
+ *   rapido - Procesa rápido (0ms)   - Análisis B
+ *   normal - Velocidad estándar (500ms)
+ */
 
 #include "../incs/mensaje.h"
 
@@ -12,33 +18,55 @@ int main(int argc, char *argv[])
     struct mensaje_t msg;
     int longitud = sizeof(struct mensaje_t) - sizeof(long);
     int contador = 0;
-    int velocidad_proceso = 100; // ms defecto
     int send_activos = 1;
     int mensajes_fin = 0;
     
-    /*saca la velocidad de procesamiento si se da*/
+    // Configuración de velocidad de procesamiento
+    int delay_ms = 500;  // Normal por defecto
+    char modo[20] = "normal";
+    
+    // Parsear argumentos
     if (argc > 1) 
     {
-        velocidad_proceso = atoi(argv[1]);
+        strncpy(modo, argv[1], sizeof(modo) - 1);
+        modo[sizeof(modo) - 1] = '\0';
+        
+        if (strcmp(modo, "lento") == 0) 
+        {
+            delay_ms = 2000;  // 2 segundos
+        } 
+        else if (strcmp(modo, "rapido") == 0) 
+        {
+            delay_ms = 0;  // Sin delay
+        }
+    }
+    
+    if (argc > 2) 
+    {
+        send_activos = atoi(argv[2]);
     }
     
     printf("=== RECEIVE INICIADO ===\n");
-    printf("Velocidad procesamiento: %d ms\n", velocidad_proceso);
+    printf("PID: %d\n", getpid());
+    printf("Modo: %s (delay=%dms)\n", modo, delay_ms);
+    printf("Esperando mensajes de %d send(s)...\n\n", send_activos);
     
-    /*crea o conecta a la cola de mensajes */
-    if ((msqid = msgget(CLAVE_COLA, IPC_CREAT | 0666)) == -1) 
+    // Crear o conectar a la cola de mensajes (usando CLAVE_COLA)
+    msqid = msgget(CLAVE_COLA, IPC_CREAT | 0666);
+    if (msqid == -1) 
     {
         perror("Error al crear/conectar cola de mensajes");
         exit(EXIT_FAILURE);
     }
     
-    printf("consumidor conectado a cola %d\n", msqid);
-    printf("esperando mensajes...\n\n");
+    printf("Conectado a cola: %d\n\n", msqid);
     
-    /* para recibir mensajes continuamente */
+    time_t inicio = time(NULL);
+    
+    // Recibir mensajes continuamente
     while (1) 
     {
-        /* recibir cualquier tipo de mensaje (0 = todos los tipos) */
+        // Recibir cualquier tipo de mensaje (0 = todos los tipos)
         if (msgrcv(msqid, &msg, longitud, 0, 0) == -1) 
         {
             perror("Error al recibir mensaje");
@@ -48,39 +76,58 @@ int main(int argc, char *argv[])
         if (msg.tipo == TIPO_FIN) 
         {
             mensajes_fin++;
-            printf("\n>>> Recibido FIN del send %d <<<\n\n", msg.id_send);
+            printf("\n>>> FIN recibido del Send %d [%d/%d] <<<\n\n", 
+                   msg.id_send, mensajes_fin, send_activos);
             
-            /* Si esperamos múltiples productores, verificar si todos terminaron */
+            // Si todos los senders terminaron
             if (mensajes_fin >= send_activos) 
             {
-                printf("todos los send han finalizado.\n");
+                printf("Todos los sends han finalizado.\n");
                 break;
             }
-        } else 
+        } 
+        else 
         {
-            /* procesar mensaje de datos */
+            // Procesar mensaje de datos
             contador++;
             
-            /* simula procesamiento */
-            usleep(velocidad_proceso * 1000);
+            // Simular procesamiento con delay
+            if (delay_ms > 0) 
+            {
+                usleep(delay_ms * 1000);
+            }
             
-            printf("Recieve: [Msg %d] Prod=%d Seq=%d Dato=%d Texto=\"%s\"\n",
-                   contador, msg.id_send, msg.numero_secuencia, 
-                   msg.dato, msg.texto);
+            printf("[%3d] Recibido: %s\n", contador, msg.texto);
+            
+            // Detalles cada 10 mensajes
+            if (contador % 10 == 0) 
+            {
+                printf("    └─ Send:%d Sec:%d Dato:%d\n",
+                       msg.id_send, msg.numero_secuencia, msg.dato);
+            }
         }
     }
     
-    printf("\n=== CONSUMIDOR FINALIZADO ===\n");
-    printf("Total de mensajes procesados: %d\n", contador);
+    time_t fin = time(NULL);
+    int tiempo_total = (int)difftime(fin, inicio);
     
-    /* Eliminar la cola de mensajes */
+    printf("\n=== RECEIVE FINALIZADO ===\n");
+    printf("Total mensajes procesados: %d\n", contador);
+    printf("Tiempo total: %d segundos\n", tiempo_total);
+    if (tiempo_total > 0) 
+    {
+        printf("Velocidad promedio: %.2f msg/s\n", (float)contador / tiempo_total);
+    }
+    
+    // Eliminar la cola de mensajes
+    printf("\nEliminando cola de mensajes...\n");
     if (msgctl(msqid, IPC_RMID, NULL) == -1) 
     {
-        perror("error al eliminar cola de mensajes");
+        perror("Error al eliminar cola de mensajes");
         exit(EXIT_FAILURE);
     }
     
-    printf("cola de mensajes eliminada correctamente.\n");
+    printf("Cola eliminada correctamente.\n");
     
     return EXIT_SUCCESS;
 }

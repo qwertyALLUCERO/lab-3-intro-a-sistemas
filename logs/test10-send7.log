@@ -1,0 +1,23 @@
+=== SEND 7 INICIADO ===
+PID: 103233
+Mensajes a enviar: 15
+Cola creada/conectada: 22
+
+[  1/ 15] Enviado: Send7-Msg001-R-Dato:0771 (delay=280ms)
+[  2/ 15] Enviado: Send7-Msg002-x-Dato:0587 (delay=246ms)
+[  3/ 15] Enviado: Send7-Msg003-J-Dato:0374 (delay=200ms)
+[  4/ 15] Enviado: Send7-Msg004-b-Dato:0129 (delay=182ms)
+[  5/ 15] Enviado: Send7-Msg005-i-Dato:0888 (delay=257ms)
+[  6/ 15] Enviado: Send7-Msg006-C-Dato:0185 (delay=108ms)
+[  7/ 15] Enviado: Send7-Msg007-H-Dato:0333 (delay=157ms)
+[  8/ 15] Enviado: Send7-Msg008-C-Dato:0710 (delay=53ms)
+[  9/ 15] Enviado: Send7-Msg009-a-Dato:0096 (delay=292ms)
+[ 10/ 15] Enviado: Send7-Msg010-q-Dato:0051 (delay=441ms)
+[ 11/ 15] Enviado: Send7-Msg011-u-Dato:0658 (delay=313ms)
+[ 12/ 15] Enviado: Send7-Msg012-F-Dato:0255 (delay=303ms)
+[ 13/ 15] Enviado: Send7-Msg013-G-Dato:0413 (delay=103ms)
+[ 14/ 15] Enviado: Send7-Msg014-h-Dato:0541 (delay=442ms)
+[ 15/ 15] Enviado: Send7-Msg015-N-Dato:0781 (delay=198ms)
+
+=== SEND 7 FINALIZADO ===
+Total enviado: 15 mensajes + 1 FIN

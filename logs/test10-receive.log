@@ -1,0 +1,211 @@
+=== RECEIVE INICIADO ===
+PID: 103186
+Modo: normal (delay=500ms)
+Esperando mensajes de 10 send(s)...
+
+Conectado a cola: 22
+
+[  1] Recibido: Send4-Msg001-V-Dato:0107
+[  2] Recibido: Send10-Msg001-f-Dato:0254
+[  3] Recibido: Send6-Msg001-W-Dato:0113
+[  4] Recibido: Send8-Msg001-G-Dato:0804
+[  5] Recibido: Send9-Msg001-i-Dato:0901
+[  6] Recibido: Send4-Msg002-k-Dato:0902
+[  7] Recibido: Send7-Msg001-R-Dato:0771
+[  8] Recibido: Send8-Msg002-g-Dato:0523
+[  9] Recibido: Send6-Msg002-D-Dato:0001
+[ 10] Recibido: Send1-Msg001-t-Dato:0227
+    └─ Send:1 Sec:1 Dato:227
+[ 11] Recibido: Send9-Msg002-U-Dato:0906
+[ 12] Recibido: Send2-Msg001-w-Dato:0244
+[ 13] Recibido: Send8-Msg003-x-Dato:0215
+[ 14] Recibido: Send5-Msg001-X-Dato:0361
+[ 15] Recibido: Send3-Msg001-H-Dato:0892
+[ 16] Recibido: Send10-Msg002-J-Dato:0037
+[ 17] Recibido: Send7-Msg002-x-Dato:0587
+[ 18] Recibido: Send4-Msg003-e-Dato:0828
+[ 19] Recibido: Send9-Msg003-M-Dato:0889
+[ 20] Recibido: Send6-Msg003-z-Dato:0438
+    └─ Send:6 Sec:3 Dato:438
+[ 21] Recibido: Send5-Msg002-b-Dato:0566
+[ 22] Recibido: Send10-Msg003-A-Dato:0015
+[ 23] Recibido: Send4-Msg004-K-Dato:0384
+[ 24] Recibido: Send5-Msg003-d-Dato:0606
+[ 25] Recibido: Send3-Msg002-S-Dato:0222
+[ 26] Recibido: Send7-Msg003-J-Dato:0374
+[ 27] Recibido: Send2-Msg002-J-Dato:0950
+[ 28] Recibido: Send9-Msg004-t-Dato:0222
+[ 29] Recibido: Send6-Msg004-C-Dato:0806
+[ 30] Recibido: Send4-Msg005-H-Dato:0950
+    └─ Send:4 Sec:5 Dato:950
+[ 31] Recibido: Send1-Msg002-n-Dato:0193
+[ 32] Recibido: Send2-Msg003-c-Dato:0190
+[ 33] Recibido: Send8-Msg004-c-Dato:0483
+[ 34] Recibido: Send7-Msg004-b-Dato:0129
+[ 35] Recibido: Send10-Msg004-P-Dato:0874
+[ 36] Recibido: Send3-Msg003-T-Dato:0029
+[ 37] Recibido: Send1-Msg003-Q-Dato:0703
+[ 38] Recibido: Send4-Msg006-w-Dato:0078
+[ 39] Recibido: Send8-Msg005-Q-Dato:0103
+[ 40] Recibido: Send10-Msg005-F-Dato:0853
+    └─ Send:10 Sec:5 Dato:853
+[ 41] Recibido: Send1-Msg004-F-Dato:0392
+[ 42] Recibido: Send4-Msg007-c-Dato:0151
+[ 43] Recibido: Send5-Msg004-w-Dato:0827
+[ 44] Recibido: Send7-Msg005-i-Dato:0888
+[ 45] Recibido: Send6-Msg005-Z-Dato:0607
+[ 46] Recibido: Send9-Msg005-n-Dato:0572
+[ 47] Recibido: Send10-Msg006-x-Dato:0257
+[ 48] Recibido: Send7-Msg006-C-Dato:0185
+[ 49] Recibido: Send2-Msg004-c-Dato:0420
+[ 50] Recibido: Send1-Msg005-m-Dato:0764
+    └─ Send:1 Sec:5 Dato:764
+[ 51] Recibido: Send3-Msg004-B-Dato:0310
+[ 52] Recibido: Send8-Msg006-P-Dato:0279
+[ 53] Recibido: Send6-Msg006-o-Dato:0650
+[ 54] Recibido: Send9-Msg006-d-Dato:0874
+[ 55] Recibido: Send7-Msg007-H-Dato:0333
+[ 56] Recibido: Send4-Msg008-F-Dato:0643
+[ 57] Recibido: Send5-Msg005-J-Dato:0367
+[ 58] Recibido: Send7-Msg008-C-Dato:0710
+[ 59] Recibido: Send8-Msg007-E-Dato:0792
+[ 60] Recibido: Send1-Msg006-B-Dato:0496
+    └─ Send:1 Sec:6 Dato:496
+[ 61] Recibido: Send2-Msg005-F-Dato:0702
+[ 62] Recibido: Send10-Msg007-f-Dato:0069
+[ 63] Recibido: Send3-Msg005-C-Dato:0404
+[ 64] Recibido: Send1-Msg007-h-Dato:0823
+[ 65] Recibido: Send6-Msg007-H-Dato:0687
+[ 66] Recibido: Send7-Msg009-a-Dato:0096
+[ 67] Recibido: Send5-Msg006-X-Dato:0175
+[ 68] Recibido: Send2-Msg006-x-Dato:0117
+[ 69] Recibido: Send9-Msg007-u-Dato:0594
+[ 70] Recibido: Send6-Msg008-r-Dato:0385
+    └─ Send:6 Sec:8 Dato:385
+[ 71] Recibido: Send4-Msg009-A-Dato:0792
+[ 72] Recibido: Send8-Msg008-U-Dato:0954
+[ 73] Recibido: Send10-Msg008-F-Dato:0420
+[ 74] Recibido: Send4-Msg010-H-Dato:0179
+[ 75] Recibido: Send5-Msg007-L-Dato:0736
+[ 76] Recibido: Send3-Msg006-V-Dato:0092
+[ 77] Recibido: Send1-Msg008-r-Dato:0051
+[ 78] Recibido: Send2-Msg007-y-Dato:0243
+[ 79] Recibido: Send5-Msg008-e-Dato:0348
+[ 80] Recibido: Send2-Msg008-D-Dato:0864
+    └─ Send:2 Sec:8 Dato:864
+[ 81] Recibido: Send9-Msg008-m-Dato:0054
+[ 82] Recibido: Send6-Msg009-H-Dato:0141
+[ 83] Recibido: Send7-Msg010-q-Dato:0051
+[ 84] Recibido: Send4-Msg011-l-Dato:0409
+[ 85] Recibido: Send1-Msg009-n-Dato:0730
+[ 86] Recibido: Send3-Msg007-K-Dato:0412
+[ 87] Recibido: Send8-Msg009-X-Dato:0306
+[ 88] Recibido: Send2-Msg009-z-Dato:0025
+[ 89] Recibido: Send9-Msg009-y-Dato:0542
+[ 90] Recibido: Send4-Msg012-N-Dato:0163
+    └─ Send:4 Sec:12 Dato:163
+[ 91] Recibido: Send10-Msg009-V-Dato:0744
+[ 92] Recibido: Send7-Msg011-u-Dato:0658
+[ 93] Recibido: Send3-Msg008-y-Dato:0405
+[ 94] Recibido: Send4-Msg013-s-Dato:0325
+[ 95] Recibido: Send5-Msg009-J-Dato:0023
+[ 96] Recibido: Send1-Msg010-E-Dato:0021
+[ 97] Recibido: Send2-Msg010-c-Dato:0886
+[ 98] Recibido: Send4-Msg014-u-Dato:0708
+[ 99] Recibido: Send6-Msg010-z-Dato:0464
+[100] Recibido: Send8-Msg010-s-Dato:0261
+    └─ Send:8 Sec:10 Dato:261
+[101] Recibido: Send9-Msg010-n-Dato:0587
+[102] Recibido: Send2-Msg011-d-Dato:0122
+[103] Recibido: Send6-Msg011-w-Dato:0119
+[104] Recibido: Send10-Msg010-x-Dato:0134
+[105] Recibido: Send3-Msg009-F-Dato:0551
+[106] Recibido: Send1-Msg011-d-Dato:0576
+[107] Recibido: Send7-Msg012-F-Dato:0255
+[108] Recibido: Send4-Msg015-C-Dato:0010
+
+>>> FIN recibido del Send 4 [1/10] <<<
+
+[109] Recibido: Send10-Msg011-y-Dato:0731
+[110] Recibido: Send5-Msg010-W-Dato:0059
+    └─ Send:5 Sec:10 Dato:59
+[111] Recibido: Send9-Msg011-V-Dato:0437
+[112] Recibido: Send7-Msg013-G-Dato:0413
+[113] Recibido: Send5-Msg011-N-Dato:0468
+[114] Recibido: Send3-Msg010-B-Dato:0857
+[115] Recibido: Send10-Msg012-U-Dato:0509
+[116] Recibido: Send6-Msg012-k-Dato:0354
+[117] Recibido: Send2-Msg012-e-Dato:0141
+[118] Recibido: Send9-Msg012-E-Dato:0109
+[119] Recibido: Send3-Msg011-M-Dato:0573
+[120] Recibido: Send8-Msg011-y-Dato:0064
+    └─ Send:8 Sec:11 Dato:64
+[121] Recibido: Send1-Msg012-O-Dato:0770
+[122] Recibido: Send6-Msg013-I-Dato:0340
+[123] Recibido: Send9-Msg013-R-Dato:0119
+[124] Recibido: Send10-Msg013-K-Dato:0615
+[125] Recibido: Send6-Msg014-C-Dato:0915
+[126] Recibido: Send9-Msg014-A-Dato:0851
+[127] Recibido: Send6-Msg015-i-Dato:0910
+
+>>> FIN recibido del Send 6 [2/10] <<<
+
+[128] Recibido: Send7-Msg014-h-Dato:0541
+[129] Recibido: Send8-Msg012-f-Dato:0587
+[130] Recibido: Send2-Msg013-N-Dato:0330
+    └─ Send:2 Sec:13 Dato:330
+[131] Recibido: Send5-Msg012-E-Dato:0285
+[132] Recibido: Send3-Msg012-Y-Dato:0954
+[133] Recibido: Send9-Msg015-o-Dato:0908
+
+>>> FIN recibido del Send 9 [3/10] <<<
+
+[134] Recibido: Send7-Msg015-N-Dato:0781
+
+>>> FIN recibido del Send 7 [4/10] <<<
+
+[135] Recibido: Send1-Msg013-X-Dato:0825
+[136] Recibido: Send10-Msg014-i-Dato:0954
+[137] Recibido: Send8-Msg013-G-Dato:0153
+[138] Recibido: Send1-Msg014-U-Dato:0568
+[139] Recibido: Send5-Msg013-u-Dato:0772
+[140] Recibido: Send2-Msg014-p-Dato:0750
+    └─ Send:2 Sec:14 Dato:750
+[141] Recibido: Send3-Msg013-i-Dato:0277
+[142] Recibido: Send10-Msg015-S-Dato:0143
+
+>>> FIN recibido del Send 10 [5/10] <<<
+
+[143] Recibido: Send8-Msg014-f-Dato:0882
+[144] Recibido: Send3-Msg014-m-Dato:0823
+[145] Recibido: Send5-Msg014-q-Dato:0994
+[146] Recibido: Send2-Msg015-m-Dato:0803
+
+>>> FIN recibido del Send 2 [6/10] <<<
+
+[147] Recibido: Send8-Msg015-G-Dato:0754
+
+>>> FIN recibido del Send 8 [7/10] <<<
+
+[148] Recibido: Send3-Msg015-o-Dato:0050
+
+>>> FIN recibido del Send 3 [8/10] <<<
+
+[149] Recibido: Send1-Msg015-H-Dato:0331
+
+>>> FIN recibido del Send 1 [9/10] <<<
+
+[150] Recibido: Send5-Msg015-E-Dato:0122
+    └─ Send:5 Sec:15 Dato:122
+
+>>> FIN recibido del Send 5 [10/10] <<<
+
+Todos los sends han finalizado.
+
+=== RECEIVE FINALIZADO ===
+Total mensajes procesados: 150
+Tiempo total: 78 segundos
+Velocidad promedio: 1.92 msg/s
+
+Eliminando cola de mensajes...
+Cola eliminada correctamente.

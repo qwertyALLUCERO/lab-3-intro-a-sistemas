@@ -1,0 +1,38 @@
+=== SEND 2 INICIADO ===
+PID: 102466
+Mensajes a enviar: 30
+Cola creada/conectada: 21
+
+[  1/ 30] Enviado: Send2-Msg001-d-Dato:0291 (delay=234ms)
+[  2/ 30] Enviado: Send2-Msg002-B-Dato:0184 (delay=461ms)
+[  3/ 30] Enviado: Send2-Msg003-I-Dato:0389 (delay=80ms)
+[  4/ 30] Enviado: Send2-Msg004-D-Dato:0671 (delay=140ms)
+[  5/ 30] Enviado: Send2-Msg005-K-Dato:0329 (delay=417ms)
+[  6/ 30] Enviado: Send2-Msg006-u-Dato:0324 (delay=417ms)
+[  7/ 30] Enviado: Send2-Msg007-S-Dato:0257 (delay=458ms)
+[  8/ 30] Enviado: Send2-Msg008-p-Dato:0760 (delay=90ms)
+[  9/ 30] Enviado: Send2-Msg009-c-Dato:0515 (delay=387ms)
+[ 10/ 30] Enviado: Send2-Msg010-d-Dato:0608 (delay=51ms)
+[ 11/ 30] Enviado: Send2-Msg011-j-Dato:0620 (delay=68ms)
+[ 12/ 30] Enviado: Send2-Msg012-k-Dato:0649 (delay=368ms)
+[ 13/ 30] Enviado: Send2-Msg013-l-Dato:0390 (delay=154ms)
+[ 14/ 30] Enviado: Send2-Msg014-g-Dato:0412 (delay=452ms)
+[ 15/ 30] Enviado: Send2-Msg015-i-Dato:0092 (delay=368ms)
+[ 16/ 30] Enviado: Send2-Msg016-c-Dato:0768 (delay=491ms)
+[ 17/ 30] Enviado: Send2-Msg017-v-Dato:0024 (delay=205ms)
+[ 18/ 30] Enviado: Send2-Msg018-c-Dato:0783 (delay=245ms)
+[ 19/ 30] Enviado: Send2-Msg019-C-Dato:0649 (delay=338ms)
+[ 20/ 30] Enviado: Send2-Msg020-f-Dato:0609 (delay=96ms)
+[ 21/ 30] Enviado: Send2-Msg021-H-Dato:0228 (delay=114ms)
+[ 22/ 30] Enviado: Send2-Msg022-V-Dato:0030 (delay=478ms)
+[ 23/ 30] Enviado: Send2-Msg023-D-Dato:0883 (delay=353ms)
+[ 24/ 30] Enviado: Send2-Msg024-j-Dato:0743 (delay=191ms)
+[ 25/ 30] Enviado: Send2-Msg025-Y-Dato:0186 (delay=265ms)
+[ 26/ 30] Enviado: Send2-Msg026-s-Dato:0953 (delay=256ms)
+[ 27/ 30] Enviado: Send2-Msg027-f-Dato:0977 (delay=167ms)
+[ 28/ 30] Enviado: Send2-Msg028-F-Dato:0111 (delay=118ms)
+[ 29/ 30] Enviado: Send2-Msg029-I-Dato:0760 (delay=407ms)
+[ 30/ 30] Enviado: Send2-Msg030-n-Dato:0368 (delay=209ms)
+
+=== SEND 2 FINALIZADO ===
+Total enviado: 30 mensajes + 1 FIN
