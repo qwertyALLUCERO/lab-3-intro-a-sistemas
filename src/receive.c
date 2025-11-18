@@ -3,7 +3,9 @@
  * 
  * Compilar: gcc -Iincs src/receive.c -o bin/receive
  * Ejecutar: ./bin/receive [modo] [num_senders]
- * 
+ *
+ * Rodolfo Aguilar / Alexander Lucero / Benjamin Reyes 
+ *  
  * Modos:
  *   lento  - Procesa lento (2000ms) - Análisis A
  *   rapido - Procesa rápido (0ms)   - Análisis B

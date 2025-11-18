@@ -1,5 +1,7 @@
 /*
  * mensaje.h - Definiciones compartidas para IPC con colas de mensajes
+ *
+ * Rodolfo Aguilar / Alexander Lucero / Benjamin Reyes 
  */
 #ifndef MENSAJE_H
 #define MENSAJE_H

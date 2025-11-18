@@ -1,6 +1,8 @@
 /*
  * send.c - Proceso que genera y envía datos
  * 
+ * Rodolfo Aguilar / Alexander Lucero / Benjamin Reyes 
+ * 
  * Compilar: gcc -Iincs src/send.c -o bin/send
  * Ejecutar: ./bin/send [id_send] [num_mensajes]
  */
