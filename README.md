@@ -1,4 +1,4 @@
-# Laboratorio 3 : Comunicación entre Procesos usando Colas de Mensajes
+# Laboratorio 3 : Comunicación entre PRocesos
 
 **Universidad de Magallanes**  
 **Sistemas Operativos**
@@ -11,14 +11,17 @@ Implementación del problema Send-Receive utilizando colas de mensajes  (`msgget
 
 ```
 lab3/
+├── bin/             # Ejecutables (generado)
+├── logs/            # Registros de los procesos generados por el Makefile
 ├── src/
 │   ├── send.c       # Proceso que genera datos
-│   └── receive.c      # Proceso que consume datos
-├── inc/
-│   └── mensaje.h         # Definiciones compartidas
-├── bin/                  # Ejecutables (generado)
-├── Makefile             # Automatización de compilación
-└── README.md            # Este archivo
+│   └── receive.c    # Proceso que consume datos
+├── incs/
+│   └── mensaje.h    # Definiciones compartidas
+│   └── random.h     # no usado
+├── docs/            # Archivos relacionados al informe
+├── Makefile         # Automatización de compilación
+└── README.md        # Este archivo
 ```
 
 ## Compilación
@@ -27,11 +30,11 @@ lab3/
 # Compilar todo
 make
 
-# Compilar solo productor
-make productor
+# Compilar solo send
+make send
 
-# Compilar solo consumidor
-make consumidor
+# Compilar solo receive
+make receive
 ```
 
 ## Ejecución
@@ -102,6 +105,7 @@ make cleanq
 
 ## RECORDATORIOS
 
+0. Instrucciones adicionales con el comando `Make help`  
 1. Siempre eliminar colas al finalizar (`msgctl(msqid, IPC_RMID, NULL)`)
 2. Usar `ipcs` para verificar recursos IPC activos
 3. El sistema tiene límites en cantidad de colas y tamaño de buffer

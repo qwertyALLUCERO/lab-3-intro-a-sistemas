@@ -12,9 +12,9 @@ $(shell mkdir -p $(BINDIR) $(LOGDIR))
 
 HEADERS = $(INCDIR)/random.h $(INCDIR)/mensaje.h
 
-# ═══════════════════════════════════════════
+# 
 # COMPILACION
-# ═══════════════════════════════════════════
+#
 
 all: send receive
 	@echo " Compilacion exitosa"
@@ -25,9 +25,9 @@ send: $(SRCDIR)/send.c $(HEADERS)
 receive: $(SRCDIR)/receive.c $(HEADERS)
 	$(CC) $(CFLAGS) $(SRCDIR)/receive.c -o $(BINDIR)/receive
 
-# ═══════════════════════════════════════════
+# 
 # LIMPIEZA
-# ═══════════════════════════════════════════
+# 
 
 clean:
 	rm -rf $(BINDIR)/* $(LOGDIR)/*
@@ -38,10 +38,9 @@ cleanq:
 	@ipcrm -Q 12345 2>/dev/null || true
 	@echo " Colas eliminadas"
 
-# ═══════════════════════════════════════════
+# 
 # MONITOREO
-# ═══════════════════════════════════════════
-
+#
 status:
 	@echo "=== Colas de mensajes ==="
 	@ipcs -q
@@ -54,9 +53,7 @@ kill:
 	@make cleanq
 	@echo " Procesos terminados"
 
-# ═══════════════════════════════════════════
-# PRUEBAS (Tu estilo: simple y directo)
-# ═══════════════════════════════════════════
+# Pruebas
 
 # Test basico: 1 send → 1 receive (100 mensajes)
 test: all cleanq
@@ -113,14 +110,6 @@ test-10: all cleanq
 	@echo ""
 	@echo " Logs en: $(LOGDIR)/test10-*.log"
 	@echo "Analiza el orden en: $(LOGDIR)/test10-receive.log"
-
-# Ejecutar TODOS los experimentos
-test-all: test test-slow test-fast test-multi test-10
-	@echo ""
-	@echo "═══════════════════════════════════════════"
-	@echo "   TODOS LOS EXPERIMENTOS COMPLETADOS"
-	@echo "═══════════════════════════════════════════"
-	@ls -lh $(LOGDIR)/
 
 # Ver logs
 logs:
