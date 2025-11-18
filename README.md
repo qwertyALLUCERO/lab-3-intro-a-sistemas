@@ -2,7 +2,7 @@
 
 **Universidad de Magallanes**  
 **Sistemas Operativos**
-**Rodolfo Aguilar / Alexander Lucero / Benjamin Reyes **
+**Rodolfo Aguilar / Alexander Lucero / Benjamin Reyes**
 
 ## Descripción
 
